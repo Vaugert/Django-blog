@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from djang.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
 
@@ -33,7 +33,7 @@ class PostDetail(View):
             },
         )
 
-     def post(self, request, slug, *args, **kwargs):
+    def post(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order.by('created_on')

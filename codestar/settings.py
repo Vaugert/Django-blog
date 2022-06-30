@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'django_summernote',
-    'crispy_forms'
-    'blog',
+    'crispy_forms',
+    'blog'
 ]
 
 SITE_ID = 1
